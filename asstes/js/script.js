@@ -732,3 +732,16 @@ if ('performance' in window) {
 //         .then(reg => console.log('Service Worker registered'))
 //         .catch(err => console.log('Service Worker registration failed'));
 // }
+
+
+let ticking = false;
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      // الكود الخاص بالسكروول هنا
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
